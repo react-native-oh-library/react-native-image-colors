@@ -1,0 +1,23 @@
+//{
+//  "name": "image_colors",
+//  "version": "1.0.0",
+//  "description": "Please describe the basic information.",
+//  "main": "Index.ets",
+//  "author": "",
+//  "license": "Apache-2.0",
+//  "dependencies": {}
+//}
+
+{
+  "license": "ISC",
+  "types": "",
+  "devDependencies": {
+  },
+  "name": "image_colors",
+  "description": "",
+  "main": "Index.ets",
+  "version": "0.0.1",
+  "dependencies": {
+    "@rnoh/react-native-openharmony": "file:../react_native_openharmony"
+  }
+}

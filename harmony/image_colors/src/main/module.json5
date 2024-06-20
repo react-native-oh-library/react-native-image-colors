@@ -1,0 +1,11 @@
+{
+  "module": {
+    "name": "image_colors",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet",
+      "2in1"
+    ]
+  }
+}

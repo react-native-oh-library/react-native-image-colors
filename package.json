@@ -1,20 +1,8 @@
 {
-  "name": "react-native-image-colors",
-  "version": "2.4.0",
+  "name": "@react-native-oh-tpl/react-native-image-colors",
+  "version": "2.4.0-0.0.2",
   "description": "Fetch prominent colors from an image.",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
-  "scripts": {
-    "build": "expo-module build",
-    "clean": "expo-module clean",
-    "lint": "expo-module lint",
-    "test": "expo-module test",
-    "prepare": "expo-module prepare",
-    "prepublishOnly": "expo-module prepublishOnly",
-    "expo-module": "expo-module",
-    "open:ios": "open -a \"Xcode\" example/ios",
-    "open:android": "open -a \"Android Studio\" example/android"
-  },
+  "main": "src/index.ts",
   "keywords": [
     "react-native",
     "expo",
@@ -27,9 +15,29 @@
     "dominant",
     "average",
     "color",
-    "palette"
+    "palette",
+    "harmony"
   ],
-  "repository": "https://github.com/osamaqarem/react-native-image-colors",
+  "harmony": {
+    "alias": "react-native-image-colors",
+    "codegenConfig": {
+      "specPaths": [
+        "./turbomodule"
+      ]
+    }
+  },
+  "codegenConfig": {
+    "name": "imagecolors",
+    "type": "modules",
+    "jsSrcsDir": "./turbomodule",
+    "android": {
+      "javaPackageName": "com.rtncalculator"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/react-native-oh-library/react-native-image-colors.git" 
+  },
   "bugs": {
     "url": "https://github.com/osamaqarem/react-native-image-colors/issues"
   },
