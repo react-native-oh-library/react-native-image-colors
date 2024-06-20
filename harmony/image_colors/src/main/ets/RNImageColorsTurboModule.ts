@@ -22,9 +22,6 @@
  * SOFTWARE.
  */
 
-import { TurboModule, TurboModuleContext } from '@rnoh/react-native-openharmony/ts';
-import { TM } from '@rnoh/react-native-openharmony/generated/ts';
-import Logger from './Logger';
 import image from "@ohos.multimedia.image";
 import effectKit from "@ohos.effectKit";
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -32,6 +29,9 @@ import http from '@ohos.net.http';
 import common from '@ohos.app.ability.common';
 import buffer from '@ohos.buffer'
 import ResponseCode from '@ohos.net.http'
+import { TurboModule, TurboModuleContext } from '@rnoh/react-native-openharmony/ts';
+import { TM } from '@rnoh/react-native-openharmony/generated/ts';
+import Logger from './Logger';
 
 export interface HarmonyImageColors { mainColor: string; largestProportionColor: string; highestSaturationColor: string; averageColor: string; platform: string; }
 
