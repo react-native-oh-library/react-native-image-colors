@@ -30,6 +30,14 @@ export interface IOSImageColors {
   platform: 'ios'
 }
 
+export interface HarmonyImageColors {
+  mainColor: string;
+  largestProportionColor: string;
+  highestSaturationColor: string;
+  averageColor: string;
+  platform: 'harmony';
+}
+
 export interface Config {
   /**
    * @description Color used when getting color fails. Must be hex
@@ -69,3 +77,4 @@ export type ImageColorsResult =
   | AndroidImageColors
   | IOSImageColors
   | WebImageColors
+  | HarmonyImageColors
