@@ -33,7 +33,13 @@ import { TurboModule, TurboModuleContext } from '@rnoh/react-native-openharmony/
 import { TM } from '@rnoh/react-native-openharmony/generated/ts';
 import Logger from './Logger';
 
-export interface HarmonyImageColors { mainColor: string; largestProportionColor: string; highestSaturationColor: string; averageColor: string; platform: string; }
+export interface HarmonyImageColors {
+  mainColor: string;
+  largestProportionColor: string;
+  highestSaturationColor: string;
+  averageColor: string;
+  platform: 'harmony';
+}
 
 type Quality = 'lowest' | 'low' | 'high' | 'highest'
 
@@ -206,7 +212,7 @@ export class RNImageColorsTurboModule extends TurboModule implements TM.ImageCol
       const largestProportionColor = rgbaToHex(colorPicker.getLargestProportionColor()) || fallbackColor
       const highestSaturationColor = rgbaToHex(colorPicker.getHighestSaturationColor()) || fallbackColor
       const averageColor = rgbaToHex(colorPicker.getAverageColor()) || fallbackColor
-      const result = { mainColor, largestProportionColor, highestSaturationColor, averageColor, platform: "harmony" }
+      const result: HarmonyImageColors = { mainColor, largestProportionColor, highestSaturationColor, averageColor, platform: 'harmony' }
 
       pixelMap.release()
 
