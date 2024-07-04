@@ -73,7 +73,13 @@ export interface IOSImageColors {
   platform: 'ios'
 }
 
-export interface HarmonyImageColors { mainColor: string; largestProportionColor: string; highestSaturationColor: string; averageColor: string; platform: string; }
+export interface HarmonyImageColors {
+  mainColor: string;
+  largestProportionColor: string;
+  highestSaturationColor: string;
+  averageColor: string;
+  platform: 'harmony';
+}
 
 export type ImageColorsResult =
   | AndroidImageColors
