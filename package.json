@@ -1,6 +1,6 @@
 {
   "name": "@react-native-oh-tpl/react-native-image-colors",
-  "version": "2.4.0-0.0.3",
+  "version": "2.4.0-0.0.4",
   "description": "Fetch prominent colors from an image.",
   "main": "src/index.ts",
   "keywords": [
