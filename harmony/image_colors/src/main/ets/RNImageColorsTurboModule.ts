@@ -96,9 +96,7 @@ async function loadBase(uri: string): Promise<ArrayBuffer> {
 
 async function loadHttp(uri: string, headers?: HeaderType): Promise<ArrayBuffer>  {
   return new Promise((resolve, reject)=>{
-    let headerObj: HeaderType = {
-      'Content-Type': 'application/octet-stream'
-    }
+    let headerObj: HeaderType = {}
     if (headers) {
       headerObj = {...headers}
     }
@@ -107,7 +105,6 @@ async function loadHttp(uri: string, headers?: HeaderType): Promise<ArrayBuffer>
         let code: http.ResponseCode | number = data.responseCode
         if (ResponseCode.ResponseCode.OK === code) {
           const imageData = data.result as ArrayBuffer
-          Logger.info("http.createHttp success")
           resolve(imageData)
         } else {
           reject(error.message)
@@ -127,20 +124,6 @@ function rgbaToHex(color: RGBAColor): string {
   return `#${redHex}${greenHex}${blueHex}`;
 }
 
-function getQuality (quality: Config['quality']): number {
-  switch (quality) {
-    case 'lowest':
-      return 10
-    case 'low':
-      return 5
-    case 'high':
-      return 1.333
-    case 'highest':
-      return 1
-    default:
-      return getQuality('low')
-  }
-}
 
 export class RNImageColorsTurboModule extends TurboModule implements TM.ImageColorsNativeModule.Spec {
   private context: common.UIAbilityContext
@@ -183,7 +166,6 @@ export class RNImageColorsTurboModule extends TurboModule implements TM.ImageCol
       }
 
       if (uri.startsWith("asset://")) {
-        console.log('uri', uri)
         const filePath = uri.replace('asset://', 'assets/')
         const fileData = await this.context.resourceManager.getRawFileContent(filePath)
         imageData = fileData.buffer.slice(0);
@@ -198,12 +180,8 @@ export class RNImageColorsTurboModule extends TurboModule implements TM.ImageCol
       }
 
       const imageSource: image.ImageSource = image.createImageSource(imageData)
-      const params = config && config?.quality ? config?.quality : 'low'
-      const quality = getQuality(params)
-      const imageInfo = await imageSource.getImageInfo(0)
       let decodingOptions: image.DecodingOptions = {
         desiredPixelFormat: 3,
-        desiredSize: { width: imageInfo.size.width * quality, height: imageInfo.size.height * quality }
       };
 
       const pixelMap = await imageSource.createPixelMap(decodingOptions)
