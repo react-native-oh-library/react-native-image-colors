@@ -36,7 +36,7 @@ class Logger {
    * @param Prefix Identifies the log tag.
    * @param domain Domain Indicates the service domain, which is a hexadecimal integer ranging from 0x0 to 0xFFFFF.
    */
-  constructor(prefix: string = 'RNCToolbarAndroid', domain: number = 0xFF00, isDebug = false) {
+  constructor(prefix: string = 'RNImageColorsTurboModule', domain: number = 0xFF00, isDebug = false) {
     this.prefix = prefix;
     this.domain = domain;
     this.isDebug = isDebug;
@@ -61,4 +61,4 @@ class Logger {
   }
 }
 
-export default new Logger('RNTextSizeTurboModule', 0xFF00, false)
+export default new Logger('RNImageColorsTurboModule', 0xFF00, false)
