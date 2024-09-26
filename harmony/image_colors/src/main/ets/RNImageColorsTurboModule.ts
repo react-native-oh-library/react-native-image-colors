@@ -96,11 +96,11 @@ async function loadBase(uri: string): Promise<ArrayBuffer> {
 
 async function loadHttp(uri: string, headers?: HeaderType): Promise<ArrayBuffer>  {
   return new Promise((resolve, reject)=>{
-    let headerObj: HeaderType = {}
+    let options: http.HttpRequestOptions = {}
     if (headers) {
-      headerObj = {...headers}
+      options.header = headers
     }
-    http.createHttp().request(uri, headerObj,
+    http.createHttp().request(uri, options,
       (error: BusinessError, data: http.HttpResponse) => {
         let code: http.ResponseCode | number = data.responseCode
         if (ResponseCode.ResponseCode.OK === code) {
