@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "react-native-image-colors",
+        "License": "MIT License",
+        "License File": "https://github.com/osamaqarem/react-native-image-colors/blob/master/LICENSE",
+        "Version Number": "2.4.0",
+        "Owner" : "xiafeng@huawei.com",
+        "Upstream URL": "https://github.com/osamaqarem/react-native-image-colors",
+        "Description": "Fetch prominent colors from an image."
+    }
+]
